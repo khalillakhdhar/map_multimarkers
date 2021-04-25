@@ -30,6 +30,13 @@ void main() => runApp(MaterialApp(
                     builder: (context) => new Container(
                       child: IconButton(
                         icon: Icon(Icons.home),
+                        onPressed: () {
+                          showDialog(
+                              context: context,
+                              builder: (BuildContext context) =>
+                                  _buildPopupDialog(
+                                      context, " Centre d'application"));
+                        },
                       ),
                     ),
                   ),
@@ -40,7 +47,13 @@ void main() => runApp(MaterialApp(
                     builder: (context) => new Container(
                       child: IconButton(
                         icon: Icon(Icons.map),
-                        onPressed: () {},
+                        onPressed: () {
+                          showDialog(
+                              context: context,
+                              builder: (BuildContext context) =>
+                                  _buildPopupDialog(
+                                      context, " station petroliére"));
+                        },
                       ),
                     ),
                   )
@@ -60,7 +73,7 @@ detecte(point) {
 
 Widget _buildPopupDialog(BuildContext context, message) {
   return new AlertDialog(
-    title: const Text('popup'),
+    title: const Text('information'),
     content: new Column(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,

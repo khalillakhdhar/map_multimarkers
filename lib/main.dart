@@ -32,6 +32,21 @@ void main() => runApp(MaterialApp(
                         icon: Icon(Icons.home),
                       ),
                     ),
+                  ),
+                  new Marker(
+                    width: 45.0,
+                    height: 45.0,
+                    point: new LatLng(40.72788440583414, -74.00642724335208),
+                    builder: (context) => new Container(
+                      child: IconButton(
+                        icon: Icon(Icons.map),
+                        onPressed: ()
+                        {
+
+                        }
+                        ,
+                      ),
+                    ),
                   )
                 ])
               ],
@@ -45,4 +60,16 @@ detecte(point) {
       point.latitude.toString() +
       " " +
       point.longitude.toString());
+}
+Widget _buildPopupDialog(BuildContext context,message)
+{
+  return new AlertDialog(
+    title: const Text('popup'),
+    content: new Column(
+      mainAxisSize: MainAxisSize.min,
+    ),
+
+
+
+  )
 }

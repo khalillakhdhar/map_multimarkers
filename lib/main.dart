@@ -40,11 +40,7 @@ void main() => runApp(MaterialApp(
                     builder: (context) => new Container(
                       child: IconButton(
                         icon: Icon(Icons.map),
-                        onPressed: ()
-                        {
-
-                        }
-                        ,
+                        onPressed: () {},
                       ),
                     ),
                   )
@@ -61,15 +57,16 @@ detecte(point) {
       " " +
       point.longitude.toString());
 }
-Widget _buildPopupDialog(BuildContext context,message)
-{
+
+Widget _buildPopupDialog(BuildContext context, message) {
   return new AlertDialog(
     title: const Text('popup'),
     content: new Column(
       mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(message),
+      ],
     ),
-
-
-
-  )
+  );
 }

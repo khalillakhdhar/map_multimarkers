@@ -68,5 +68,14 @@ Widget _buildPopupDialog(BuildContext context, message) {
         Text(message),
       ],
     ),
+    actions: <Widget>[
+      new FlatButton(
+        onPressed: () {
+          Navigator.of(context).pop();
+        },
+        textColor: Theme.of(context).primaryColor,
+        child: const Text("fermer"),
+      )
+    ],
   );
 }
